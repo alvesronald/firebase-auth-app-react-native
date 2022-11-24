@@ -20,9 +20,7 @@ export const Login = () => {
             width="90%"
             testID="email-input"
             value={form.email}
-            onChangeText={(text) =>
-              handleChangeForm("email", text)
-            }
+            onChangeText={(text) => handleChangeForm("email", text)}
           />
           <Input
             variant="outline"
@@ -33,9 +31,7 @@ export const Login = () => {
             width="90%"
             testID="password-input"
             value={form.password}
-            onChangeText={(text) =>
-              handleChangeForm("password", text)
-            }
+            onChangeText={(text) => handleChangeForm("password", text)}
           />
           <Button
             testID="signIn-button"

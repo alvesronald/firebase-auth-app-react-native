@@ -1,8 +1,4 @@
-import {
-  fireEvent,
-  render,
-  screen,
-} from "@testing-library/react-native";
+import { fireEvent, render, screen } from "@testing-library/react-native";
 import React from "react";
 import { NativeBaseProviderMock } from "../../utils/mocks/NativeBaseProviderMock";
 import { Login } from "./Login.view";
@@ -37,9 +33,7 @@ describe("<Login />", () => {
     });
 
     it("should be have placeholder with value 'Password'", () => {
-      expect(
-        screen.getByPlaceholderText("Password")
-      ).toBeTruthy();
+      expect(screen.getByPlaceholderText("Password")).toBeTruthy();
     });
 
     it("password input should be defaultValue with empty value", () => {
