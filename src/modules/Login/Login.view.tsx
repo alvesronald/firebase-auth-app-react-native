@@ -1,11 +1,5 @@
 import React from "react";
-import {
-  VStack,
-  Input,
-  Button,
-  Text,
-  Box,
-} from "native-base";
+import { VStack, Input, Button, Text, Box } from "native-base";
 import DismissKeyBoard from "../../components/DismissKeyBoard/DismissKeyBoard";
 import useLoginViewModal from "./Login.view.model";
 
@@ -16,11 +10,7 @@ export const Login = () => {
   return (
     <DismissKeyBoard>
       <Box flex={1}>
-        <VStack
-          alignItems="center"
-          space={5}
-          marginTop={250}
-        >
+        <VStack alignItems="center" space={5} marginTop={250}>
           <Input
             variant="outline"
             type="text"

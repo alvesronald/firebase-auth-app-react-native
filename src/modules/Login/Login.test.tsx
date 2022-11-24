@@ -18,15 +18,11 @@ beforeEach(() =>
 describe("<Login />", () => {
   describe("test email input rendering", () => {
     it("should be have email input", () => {
-      expect(
-        screen.getByTestId("email-input")
-      ).toBeTruthy();
+      expect(screen.getByTestId("email-input")).toBeTruthy();
     });
 
     it("should be have placeholder with value 'E-mail'", () => {
-      expect(
-        screen.getByPlaceholderText("E-mail")
-      ).toBeTruthy();
+      expect(screen.getByPlaceholderText("E-mail")).toBeTruthy();
     });
 
     it("email input should be defaultValue with empty value", () => {
@@ -37,9 +33,7 @@ describe("<Login />", () => {
 
   describe("test password input rendering", () => {
     it("should be have password input", () => {
-      expect(
-        screen.getByTestId("password-input")
-      ).toBeTruthy();
+      expect(screen.getByTestId("password-input")).toBeTruthy();
     });
 
     it("should be have placeholder with value 'Password'", () => {
@@ -49,18 +43,14 @@ describe("<Login />", () => {
     });
 
     it("password input should be defaultValue with empty value", () => {
-      const passwordInput = screen.getByTestId(
-        "password-input"
-      );
+      const passwordInput = screen.getByTestId("password-input");
       expect(passwordInput.props.defaultValue).toBe("");
     });
   });
 
   describe("test SignIn button rendering", () => {
     it("should be have Sign In button", () => {
-      expect(
-        screen.getByTestId("signIn-button")
-      ).toBeTruthy();
+      expect(screen.getByTestId("signIn-button")).toBeTruthy();
     });
 
     it("should be have 'Sign In' text in SignIn Button", () => {
@@ -68,8 +58,7 @@ describe("<Login />", () => {
     });
 
     it("should be have 'SignIn' Button disabled", () => {
-      const signInButton =
-        screen.getByTestId("signIn-button");
+      const signInButton = screen.getByTestId("signIn-button");
       expect(signInButton.props).toHaveProperty(
         "accessibilityState.disabled",
         true
@@ -80,11 +69,8 @@ describe("<Login />", () => {
   describe("test actions on the form", () => {
     it("Sign in button should be disabled when email or password field is empty", () => {
       const emailInput = screen.getByTestId("email-input");
-      const passwordInput = screen.getByTestId(
-        "password-input"
-      );
-      const signInButton =
-        screen.getByTestId("signIn-button");
+      const passwordInput = screen.getByTestId("password-input");
+      const signInButton = screen.getByTestId("signIn-button");
 
       fireEvent.changeText(emailInput, "");
       fireEvent.changeText(passwordInput, "");
@@ -97,11 +83,8 @@ describe("<Login />", () => {
 
     it("Login button should be disabled when email is filled in but password field is empty", () => {
       const emailInput = screen.getByTestId("email-input");
-      const passwordInput = screen.getByTestId(
-        "password-input"
-      );
-      const signInButton =
-        screen.getByTestId("signIn-button");
+      const passwordInput = screen.getByTestId("password-input");
+      const signInButton = screen.getByTestId("signIn-button");
 
       fireEvent.changeText(emailInput, "user@email.com");
       fireEvent.changeText(passwordInput, "");
@@ -114,11 +97,8 @@ describe("<Login />", () => {
 
     it("Login button should be disabled when password is filled in but email field is empty", () => {
       const emailInput = screen.getByTestId("email-input");
-      const passwordInput = screen.getByTestId(
-        "password-input"
-      );
-      const signInButton =
-        screen.getByTestId("signIn-button");
+      const passwordInput = screen.getByTestId("password-input");
+      const signInButton = screen.getByTestId("signIn-button");
 
       fireEvent.changeText(emailInput, "");
       fireEvent.changeText(passwordInput, "senha123");
@@ -131,11 +111,8 @@ describe("<Login />", () => {
 
     it("Login button should not be disabled when email and password are filled", () => {
       const emailInput = screen.getByTestId("email-input");
-      const passwordInput = screen.getByTestId(
-        "password-input"
-      );
-      const signInButton =
-        screen.getByTestId("signIn-button");
+      const passwordInput = screen.getByTestId("password-input");
+      const signInButton = screen.getByTestId("signIn-button");
 
       fireEvent.changeText(emailInput, "user@email.com");
       fireEvent.changeText(passwordInput, "senha123");
