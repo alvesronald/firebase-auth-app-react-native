@@ -1,11 +1,7 @@
 import React from "react";
-import {
-  SafeAreaView,
-  StyleSheet,
-} from "react-native";
+import { SafeAreaView, StyleSheet } from "react-native";
 import { Login } from "./modules/Login/Login.view";
 import { NativeBaseProvider } from "native-base";
-
 
 const App = () => {
   return (
