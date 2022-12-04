@@ -9,21 +9,20 @@ import { AuthStackNavigator } from "../../stacks/AuthStack";
 
 type LoginProps = NativeStackScreenProps<AuthStackNavigator, "Login">;
 
-const navigationMock = { navigate: jest.fn() }; 
+const navigationMock = { navigate: jest.fn() };
 
 beforeEach(() => {
   render(
     <NativeBaseProviderMock>
       <NavigationContainer>
-        <Login 
-         navigation={navigationMock as unknown as LoginProps["navigation"]} 
-         route={null as unknown as  LoginProps["route"]}
-        />   
+        <Login
+          navigation={navigationMock as unknown as LoginProps["navigation"]}
+          route={null as unknown as LoginProps["route"]}
+        />
       </NavigationContainer>
     </NativeBaseProviderMock>
   );
-}
-);
+});
 
 describe("<Login />", () => {
   describe("test email input rendering", () => {
@@ -131,7 +130,6 @@ describe("<Login />", () => {
     });
   });
 
-
   describe("test 'Forgot password' ", () => {
     it("should be 'Forget Password?' text", () => {
       const forgetPasswordText = screen.getByText("Forget Password?");
@@ -144,12 +142,10 @@ describe("<Login />", () => {
     });
 
     it("should has button with text 'Recover here' button that navigate to the 'Recover here' screen", () => {
-      
       const recoverHereText = screen.getByText("Recover here");
       fireEvent.press(recoverHereText);
 
-      expect(navigationMock.navigate).toHaveBeenCalledWith("ForgetPassword");     
+      expect(navigationMock.navigate).toHaveBeenCalledWith("ForgetPassword");
     });
-
   });
 });

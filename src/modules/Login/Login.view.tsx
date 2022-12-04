@@ -6,13 +6,11 @@ import { TouchableOpacity } from "react-native";
 import { AuthStackNavigator } from "../../stacks/AuthStack";
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
 
-
 type LoginProps = NativeStackScreenProps<AuthStackNavigator, "Login">;
 
 export const Login = ({ navigation }: LoginProps) => {
   const { form, handleChangeForm, isDisabledSignInButton } =
     useLoginViewModal();
-
 
   return (
     <DismissKeyBoard>

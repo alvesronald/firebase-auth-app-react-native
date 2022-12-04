@@ -3,10 +3,9 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import AuthStack from "./AuthStack";
 
-
 type RootStackNavigator = {
   Auth: undefined;
-}
+};
 
 const Stack = createNativeStackNavigator<RootStackNavigator>();
 

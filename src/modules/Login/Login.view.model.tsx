@@ -1,7 +1,6 @@
 import { useMemo, useState } from "react";
 import { useNavigation } from "@react-navigation/native";
 
-
 const useLoginViewModal = () => {
   const navigation = useNavigation();
 

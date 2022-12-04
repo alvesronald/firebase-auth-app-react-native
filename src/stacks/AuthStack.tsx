@@ -3,11 +3,10 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { Login } from "../modules/Login/Login.view";
 import { ForgetPassword } from "../modules/ForgetPassword/ForgetPassword.view";
 
-
 export type AuthStackNavigator = {
   Login: undefined;
-  ForgetPassword: undefined
-}
+  ForgetPassword: undefined;
+};
 
 const Stack = createNativeStackNavigator<AuthStackNavigator>();
 
@@ -20,10 +19,7 @@ const AuthStack = () => (
         headerShown: false,
       }}
     />
-    <Stack.Screen
-      name="ForgetPassword"
-      component={ForgetPassword}
-    />
+    <Stack.Screen name="ForgetPassword" component={ForgetPassword} />
   </Stack.Navigator>
 );
 
