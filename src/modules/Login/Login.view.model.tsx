@@ -1,7 +1,6 @@
 import { useMemo, useState } from "react";
 
 const useLoginViewModal = () => {
-
   const [form, setForm] = useState({
     email: "",
     password: "",

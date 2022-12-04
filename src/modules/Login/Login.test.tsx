@@ -8,7 +8,6 @@ import { LoginProps } from "./Login.model";
 
 jest.mock("react-native/Libraries/Animated/NativeAnimatedHelper");
 
-
 const navigationMock = { navigate: jest.fn() };
 
 beforeEach(() => {
