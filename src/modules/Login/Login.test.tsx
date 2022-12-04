@@ -4,10 +4,8 @@ import { NativeBaseProviderMock } from "../../config/jest/mocks/NativeBaseProvid
 import { NavigationContainer } from "@react-navigation/native";
 
 import { Login } from "./Login.view";
-import { NativeStackScreenProps } from "@react-navigation/native-stack";
-import { AuthStackNavigator } from "../../stacks/AuthStack";
+import { LoginProps } from "./Login.model";
 
-type LoginProps = NativeStackScreenProps<AuthStackNavigator, "Login">;
 
 const navigationMock = { navigate: jest.fn() };
 

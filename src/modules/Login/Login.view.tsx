@@ -3,10 +3,8 @@ import { VStack, Input, Button, Text, Box, HStack } from "native-base";
 import DismissKeyBoard from "../../components/DismissKeyBoard/DismissKeyBoard";
 import useLoginViewModal from "./Login.view.model";
 import { TouchableOpacity } from "react-native";
-import { AuthStackNavigator } from "../../stacks/AuthStack";
-import { NativeStackScreenProps } from "@react-navigation/native-stack";
+import { LoginProps } from "./Login.model";
 
-type LoginProps = NativeStackScreenProps<AuthStackNavigator, "Login">;
 
 export const Login = ({ navigation }: LoginProps) => {
   const { form, handleChangeForm, isDisabledSignInButton } =
