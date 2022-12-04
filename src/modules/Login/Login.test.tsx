@@ -1,10 +1,12 @@
 import React from "react";
 import { fireEvent, render, screen } from "@testing-library/react-native";
-import { NativeBaseProviderMock } from "../../config/jest/mocks/NativeBaseProviderMock";
+import { NativeBaseProviderMock } from "../../jest/mocks/NativeBaseProviderMock";
 import { NavigationContainer } from "@react-navigation/native";
 
 import { Login } from "./Login.view";
 import { LoginProps } from "./Login.model";
+
+jest.mock("react-native/Libraries/Animated/NativeAnimatedHelper");
 
 
 const navigationMock = { navigate: jest.fn() };

@@ -5,7 +5,6 @@ import useLoginViewModal from "./Login.view.model";
 import { TouchableOpacity } from "react-native";
 import { LoginProps } from "./Login.model";
 
-
 export const Login = ({ navigation }: LoginProps) => {
   const { form, handleChangeForm, isDisabledSignInButton } =
     useLoginViewModal();

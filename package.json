@@ -58,7 +58,7 @@
       "@testing-library/jest-native/extend-expect"
     ],
     "transformIgnorePatterns": [
-      "node_modules/(?!@react-native|react-native|native-base|react-navigation)"
+      "node_modules/(?!@react-native|react-native|native-base|@react-navigation)"
     ]
   }
 }

@@ -9,17 +9,15 @@ export const ForgetPassword = () => {
         <VStack alignItems="center" space={5} marginTop={250}>
           <Input
             variant="outline"
-            type="password"
             defaultValue=""
             size="2xl"
             placeholder="E-mail"
             width="90%"
             testID="email-input"
-            ref={(ref) => {
-              ref?.getNativeRef()?.focus();
-            }}
+            type="text"
+            autoFocus
           />
-          <Button testID="signIn-button" width="90%">
+          <Button width="90%">
             <Text color="white">Submit</Text>
           </Button>
         </VStack>

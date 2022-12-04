@@ -1,8 +1,6 @@
 import { useMemo, useState } from "react";
-import { useNavigation } from "@react-navigation/native";
 
 const useLoginViewModal = () => {
-  const navigation = useNavigation();
 
   const [form, setForm] = useState({
     email: "",
@@ -24,7 +22,6 @@ const useLoginViewModal = () => {
     form,
     handleChangeForm,
     isDisabledSignInButton,
-    navigation,
   };
 };
 
