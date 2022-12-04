@@ -1,14 +1,28 @@
-import { fireEvent, render, screen } from "@testing-library/react-native";
 import React from "react";
-import { NativeBaseProviderMock } from "../../utils/mocks/NativeBaseProviderMock";
-import { Login } from "./Login.view";
+import { fireEvent, render, screen } from "@testing-library/react-native";
+import { NativeBaseProviderMock } from "../../config/jest/mocks/NativeBaseProviderMock";
+import { NavigationContainer } from "@react-navigation/native";
 
-beforeEach(() =>
+import { Login } from "./Login.view";
+import { NativeStackScreenProps } from "@react-navigation/native-stack";
+import { AuthStackNavigator } from "../../stacks/AuthStack";
+
+type LoginProps = NativeStackScreenProps<AuthStackNavigator, "Login">;
+
+const navigationMock = { navigate: jest.fn() }; 
+
+beforeEach(() => {
   render(
     <NativeBaseProviderMock>
-      <Login />
+      <NavigationContainer>
+        <Login 
+         navigation={navigationMock as unknown as LoginProps["navigation"]} 
+         route={null as unknown as  LoginProps["route"]}
+        />   
+      </NavigationContainer>
     </NativeBaseProviderMock>
-  )
+  );
+}
 );
 
 describe("<Login />", () => {
@@ -115,5 +129,27 @@ describe("<Login />", () => {
         "accessibilityState.disabled"
       );
     });
+  });
+
+
+  describe("test 'Forgot password' ", () => {
+    it("should be 'Forget Password?' text", () => {
+      const forgetPasswordText = screen.getByText("Forget Password?");
+      expect(forgetPasswordText).toBeTruthy();
+    });
+
+    it("should has 'Recover here' text", () => {
+      const recoverHereText = screen.getByText("Recover here");
+      expect(recoverHereText).toBeTruthy();
+    });
+
+    it("should has button with text 'Recover here' button that navigate to the 'Recover here' screen", () => {
+      
+      const recoverHereText = screen.getByText("Recover here");
+      fireEvent.press(recoverHereText);
+
+      expect(navigationMock.navigate).toHaveBeenCalledWith("ForgetPassword");     
+    });
+
   });
 });

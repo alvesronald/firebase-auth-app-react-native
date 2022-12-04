@@ -1,11 +1,18 @@
 import React from "react";
-import { VStack, Input, Button, Text, Box } from "native-base";
+import { VStack, Input, Button, Text, Box, HStack } from "native-base";
 import DismissKeyBoard from "../../components/DismissKeyBoard/DismissKeyBoard";
 import useLoginViewModal from "./Login.view.model";
+import { TouchableOpacity } from "react-native";
+import { AuthStackNavigator } from "../../stacks/AuthStack";
+import { NativeStackScreenProps } from "@react-navigation/native-stack";
 
-export const Login = () => {
+
+type LoginProps = NativeStackScreenProps<AuthStackNavigator, "Login">;
+
+export const Login = ({ navigation }: LoginProps) => {
   const { form, handleChangeForm, isDisabledSignInButton } =
     useLoginViewModal();
+
 
   return (
     <DismissKeyBoard>
@@ -40,6 +47,16 @@ export const Login = () => {
           >
             <Text color="white">Sign In</Text>
           </Button>
+          <HStack>
+            <Text fontSize="13">Forget Password? </Text>
+            <TouchableOpacity
+              onPress={() => navigation.navigate("ForgetPassword")}
+            >
+              <Text fontSize="13" underline>
+                Recover here
+              </Text>
+            </TouchableOpacity>
+          </HStack>
         </VStack>
       </Box>
     </DismissKeyBoard>
