@@ -1,10 +1,10 @@
 import React from "react";
 import { fireEvent, render, screen } from "@testing-library/react-native";
-import { NativeBaseProviderMock } from "../../jest/mocks/NativeBaseProviderMock";
-import { NavigationContainer } from "@react-navigation/native";
+
 
 import { Login } from "./Login.view";
 import { LoginProps } from "./Login.model";
+import Provider from "../../stacks/Providers";
 
 jest.mock("react-native/Libraries/Animated/NativeAnimatedHelper");
 
@@ -12,19 +12,17 @@ const navigationMock = { navigate: jest.fn() };
 
 beforeEach(() => {
   render(
-    <NativeBaseProviderMock>
-      <NavigationContainer>
+    <Provider>
         <Login
           navigation={navigationMock as unknown as LoginProps["navigation"]}
           route={null as unknown as LoginProps["route"]}
         />
-      </NavigationContainer>
-    </NativeBaseProviderMock>
+    </Provider>
   );
 });
 
 describe("<Login />", () => {
-  describe("test email input rendering", () => {
+  describe("test if email input rendering", () => {
     it("should be have email input", () => {
       expect(screen.getByTestId("email-input")).toBeTruthy();
     });
@@ -130,7 +128,7 @@ describe("<Login />", () => {
   });
 
   describe("test 'Forgot password' ", () => {
-    it("should be 'Forget Password?' text", () => {
+    it("should has 'Forget Password?' text", () => {
       const forgetPasswordText = screen.getByText("Forget Password?");
       expect(forgetPasswordText).toBeTruthy();
     });

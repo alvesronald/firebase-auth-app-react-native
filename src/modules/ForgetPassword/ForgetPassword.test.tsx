@@ -1,18 +1,15 @@
 import React from "react";
 import { render, screen } from "@testing-library/react-native";
-import { NativeBaseProviderMock } from "../../jest/mocks/NativeBaseProviderMock";
-import { NavigationContainer } from "@react-navigation/native";
 import { ForgetPassword } from "./ForgetPassword.view";
+import Provider from "../../stacks/Providers";
 
 jest.mock("react-native/Libraries/Animated/NativeAnimatedHelper");
 
 beforeEach(() => {
   render(
-    <NativeBaseProviderMock>
-      <NavigationContainer>
-        <ForgetPassword />
-      </NavigationContainer>
-    </NativeBaseProviderMock>
+    <Provider>
+      <ForgetPassword />
+    </Provider>
   );
 });
 

@@ -1,12 +1,12 @@
 import React from "react";
-import { NativeBaseProvider } from "native-base";
 import Routes from "./stacks/Routes";
+import Providers from "./stacks/Providers";
 
 const App = () => {
   return (
-    <NativeBaseProvider>
+    <Providers>
       <Routes />
-    </NativeBaseProvider>
+    </Providers>
   );
 };
 
