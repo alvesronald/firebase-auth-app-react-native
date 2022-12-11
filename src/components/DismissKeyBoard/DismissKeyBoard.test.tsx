@@ -19,7 +19,7 @@ describe("<DismissKeyBoard />", () => {
     expect(screen.getByRole("toolbar")).toBeTruthy();
   });
 
-  it("when clicking on the toolbar element the keyboard should disappear", () => {
+  it("when clicking on the element with toolbar role the keyboard should disappear", () => {
     const DismissKeyBoardComponent = screen.getByRole("toolbar");
 
     const EventDismissKeyBoard = spyOn(Keyboard, "dismiss");
