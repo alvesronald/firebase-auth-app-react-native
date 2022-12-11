@@ -11,20 +11,12 @@ export const NativeBaseProvider = ({
   children,
 }: {
   children: React.ReactNode;
-}) => (
-  <NBProvider initialWindowMetrics={inset}>
-    {children}
-  </NBProvider>
-);
-
-
+}) => <NBProvider initialWindowMetrics={inset}>{children}</NBProvider>;
 
 const Providers = ({ children }: { children: React.ReactNode }) => (
-    <NativeBaseProvider>
-        <NavigationContainer>
-            {children}
-        </NavigationContainer>
-    </NativeBaseProvider>
+  <NativeBaseProvider>
+    <NavigationContainer>{children}</NavigationContainer>
+  </NativeBaseProvider>
 );
 
 export default Providers;

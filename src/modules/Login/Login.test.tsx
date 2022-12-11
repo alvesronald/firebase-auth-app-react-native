@@ -1,7 +1,6 @@
 import React from "react";
 import { fireEvent, render, screen } from "@testing-library/react-native";
 
-
 import { Login } from "./Login.view";
 import { LoginProps } from "./Login.model";
 import Provider from "../../stacks/Providers";
@@ -13,10 +12,10 @@ const navigationMock = { navigate: jest.fn() };
 beforeEach(() => {
   render(
     <Provider>
-        <Login
-          navigation={navigationMock as unknown as LoginProps["navigation"]}
-          route={null as unknown as LoginProps["route"]}
-        />
+      <Login
+        navigation={navigationMock as unknown as LoginProps["navigation"]}
+        route={null as unknown as LoginProps["route"]}
+      />
     </Provider>
   );
 });

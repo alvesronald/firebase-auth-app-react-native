@@ -9,15 +9,15 @@ type RootStackNavigator = {
 const Stack = createNativeStackNavigator<RootStackNavigator>();
 
 const Routes = () => (
-    <Stack.Navigator>
-      <Stack.Screen
-        name="Auth"
-        component={AuthStack}
-        options={{
-          headerShown: false,
-        }}
-      />
-    </Stack.Navigator>
+  <Stack.Navigator>
+    <Stack.Screen
+      name="Auth"
+      component={AuthStack}
+      options={{
+        headerShown: false,
+      }}
+    />
+  </Stack.Navigator>
 );
 
 export default Routes;
