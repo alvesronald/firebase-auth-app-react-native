@@ -4,14 +4,14 @@ import { fireEvent, render, screen } from "@testing-library/react-native";
 import DismissKeyBoard from "./DismissKeyBoard";
 import { Text } from "react-native";
 
-const CustomDismissKeyBoard = () => (
+const CustomDismissKeyBoardComponent = () => (
   <DismissKeyBoard>
-    <Text>CustomDismissKeyBoard</Text>
+    <Text>CustomDismissKeyBoardComponent</Text>
   </DismissKeyBoard>
 );
 
 beforeEach(() => {
-  render(<CustomDismissKeyBoard />);
+  render(<CustomDismissKeyBoardComponent />);
 });
 
 describe("<DismissKeyBoard />", () => {
