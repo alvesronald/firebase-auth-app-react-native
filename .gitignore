@@ -31,6 +31,7 @@ local.properties
 *.iml
 *.hprof
 .cxx/
+*GoogleService-Info.plist
 
 # node.js
 #
@@ -62,3 +63,7 @@ buck-out/
 # Ruby / CocoaPods
 /ios/Pods/
 /vendor/bundle/
+
+
+#Jest
+/coverage
